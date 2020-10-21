@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Built-By: lylez
+Build-Jdk: 14
+Implementation-Title: Java Based Annotation
+Implementation-Version: 0.0.1-SNAPSHOT
+Implementation-Vendor-Id: JavaBasedAnnotationGroupId
+Implementation-Vendor: Pivotal Education
+Implementation-URL: https://spring.io/projects/spring-boot/parentProject
+ /JavaSpringBootExperimentation/JavaBasedAnnotation
+Created-By: Maven Integration for Eclipse
+
