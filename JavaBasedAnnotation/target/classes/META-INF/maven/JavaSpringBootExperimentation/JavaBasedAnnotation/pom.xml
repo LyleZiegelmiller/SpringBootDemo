@@ -5,7 +5,7 @@
     <artifactId>JavaSpringBootExperimentation</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
-  <groupId>JavaBasedAnnotationGroupId</groupId>
+  <groupId>JavaSpringBootExperimentation</groupId>
   <artifactId>JavaBasedAnnotation</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <name>Java Based Annotation</name>

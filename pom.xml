@@ -8,9 +8,6 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<!-- <version>2.2.2.RELEASE</version> -->
-		<!-- <version>2.3.0.RELEASE</version> -->
-		<!-- <version>2.3.2.RELEASE</version> -->
 		<version>2.3.4.RELEASE</version>
 	</parent>
 
@@ -46,8 +43,10 @@
 	</dependencies>
 
 	<modules>
-		<module>JavaSpringBootExperimentation</module>
+		<module>JavaBasedAnnotation</module>
+		<module>ConfigurationBased</module>
 	</modules>
+	
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<name>Java Spring Boot Experimentation Parent</name>
