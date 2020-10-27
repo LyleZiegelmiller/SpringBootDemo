@@ -44,7 +44,8 @@
 
 	<modules>
 		<module>JavaBasedAnnotation</module>
-		<module>ConfigurationBased</module>
+        <module>ConfigurationBased</module>
+		<module>ConfigurationBasedAnnotation</module>
 	</modules>
 	
 	<version>0.0.1-SNAPSHOT</version>
