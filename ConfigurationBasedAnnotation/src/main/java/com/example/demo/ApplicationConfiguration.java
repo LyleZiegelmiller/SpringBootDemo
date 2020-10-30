@@ -11,7 +11,7 @@ public class ApplicationConfiguration
 {
     ApplicationConfiguration (@Autowired SomeClass obj){
     
-        obj.setBeanProperty ();
+        //obj.setBeanProperty ();
         obj.printProperty ();
     }
 }

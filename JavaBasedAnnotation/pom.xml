@@ -5,9 +5,11 @@
     <artifactId>JavaSpringBootExperimentation</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
+  
   <groupId>JavaSpringBootExperimentation</groupId>
   <artifactId>JavaBasedAnnotation</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <name>Java Based Annotation</name>
   <description>Java Based Annotation</description>
+  <packaging>jar</packaging>
 </project>

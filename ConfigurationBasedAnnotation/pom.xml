@@ -6,8 +6,10 @@
     <artifactId>JavaSpringBootExperimentation</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
+  
   <groupId>JavaSpringBootExperimentation</groupId>
   <artifactId>ConfigurationBasedAnnotation</artifactId>
   <name>Configuration Based Annotation</name>
   <description>Configuration Based Annotation</description>
+  <packaging>jar</packaging>
 </project>
