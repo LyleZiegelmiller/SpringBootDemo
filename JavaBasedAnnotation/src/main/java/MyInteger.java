@@ -1,4 +1,3 @@
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
 
@@ -7,7 +6,7 @@ public class MyInteger
 {
     private int i;
     
-    @Autowired
+//    @Autowired
     public MyInteger (@Value ("${myInt}") Integer i)
     {
         this.i = i.intValue ();
