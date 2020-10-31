@@ -8,8 +8,7 @@ public class MyInteger
 {
     private int i;
     
-//    @Autowired
-
+//    @Autowired - optional when it's the only constructor
     public MyInteger (@Value ("${myInt}") Integer i)
     {
         this.i = i.intValue ();
