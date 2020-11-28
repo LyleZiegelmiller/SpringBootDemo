@@ -4,6 +4,8 @@ import org.springframework.context.annotation.PropertySource;
 
 @Configuration
 @PropertySource("file:src/main/resources/app.properties")
+// C:\cygwin64\home\lylez\workspace\JavaSpringBootExperimentation\JavaBasedAnnotation   \src\main\resources\app.properties
+// C:\cygwin64\home\lylez\workspace\JavaSpringBootExperimentation\JavaBasedAnnotation   \src\main\java\MyInteger.java
 public class MyInteger
 {
     private int i;
