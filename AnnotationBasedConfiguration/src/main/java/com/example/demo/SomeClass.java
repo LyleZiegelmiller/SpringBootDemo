@@ -21,6 +21,7 @@ public class SomeClass
     
     void setBeanProperty() {
         String value = env.getProperty("key1");
+        //value = 
         testBean.setProperty(value);
     }
 }
