@@ -69,6 +69,7 @@
 	<modules>
 		<module>JavaBasedAnnotation</module>
 		<module>ConfigurationBasedAnnotation</module>
+		<module>module_02052021</module>
 	</modules>
 	
 	<version>0.0.1-SNAPSHOT</version>
