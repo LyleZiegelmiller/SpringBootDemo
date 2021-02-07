@@ -6,9 +6,9 @@ import org.springframework.context.annotation.Import;
 
 @SpringBootApplication
 @Import (ApplicationConfiguration.class)
-public class AnnotationBasedConfigurationApplication {
+public class AnnotationBasedConfiguration_aka_ComponentScanning_Application {
 
 	public static void main(String[] args) {
-		SpringApplication.run(AnnotationBasedConfigurationApplication.class, args);
+		SpringApplication.run(AnnotationBasedConfiguration_aka_ComponentScanning_Application.class, args);
 	}
 }
