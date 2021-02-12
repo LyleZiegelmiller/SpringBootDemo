@@ -5,5 +5,5 @@
     <artifactId>SpringBootExperimentation</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
-  <artifactId>AnnotationBasedConfiguration</artifactId>
+  <artifactId>AnnotationBased_aka_ComponentScanning_Configuration</artifactId>
 </project>

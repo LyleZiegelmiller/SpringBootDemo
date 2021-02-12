@@ -14,7 +14,7 @@
 	<name>SpringBootExperimentation</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
-		<java.version>14</java.version>
+		<java.version>15</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -41,7 +41,7 @@
 	</build>
 
 	<modules>
-		<module>AnnotationBasedConfiguration</module>
+		<module>AnnotationBased_aka_ComponentScanning_Configuration</module>
 		<module>JavaBasedAnnotation</module>
 	</modules>
 </project>
