@@ -43,5 +43,6 @@
 	<modules>
 		<module>AnnotationBased_aka_ComponentScanning_Configuration</module>
 		<module>JavaBasedAnnotation</module>
+		<module>Actuators</module>
 	</modules>
 </project>
