@@ -10,7 +10,6 @@ public class ActuatorApplication
     {
         // TODO Auto-generated method stub
         SpringApplication.run ( ActuatorApplication.class, args );
-
     }
 
 }
