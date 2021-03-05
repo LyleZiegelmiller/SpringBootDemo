@@ -6,7 +6,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import application.config.SomeOtherClass;
 
-@SpringBootApplication(scanBasePackages = {"configure", "application.config"})
+//@SpringBootApplication(scanBasePackages = {"configure", "application.config"})
+@SpringBootApplication(scanBasePackages = {"configure", "application"})
 public class DatabaseApplication
 {
     @Autowired
