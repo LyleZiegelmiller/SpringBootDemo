@@ -9,7 +9,7 @@ import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
 @Configuration
 public class DatabaseConfiguration
 {
-    @Bean(name = "ljzDataSource")
+    @Bean//(name = "ljzDataSource")
     public DataSource dataSource() {
         return (new EmbeddedDatabaseBuilder()) //
                 .addScript("classpath:schema.sql") //
