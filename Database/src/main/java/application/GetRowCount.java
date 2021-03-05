@@ -64,8 +64,12 @@ public class GetRowCount
                 .body ( new ResponseWrapper(count, new Date().getTime ()) );
     }
 
-    @GetMapping(value = "/accounts/totalNumber/asStructuredText" ,produces={MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE})
-    public ResponseWrapper getNumberOfAccountAsStructuredText() {
+    @GetMapping(value = "/accounts/totalNumber" ,produces={MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE})
+    public ResponseWrapper getNumberOfAccount() {
+        
+        // curl  -i -u user:1e8e3b30-2193-422a-85bc-bc5597a6d560 -H 'Accept: application/xml' http://localhost:8080/accounts/totalNumber
+        // curl  -i -u user:1e8e3b30-2193-422a-85bc-bc5597a6d560 -H 'Accept: application/json' http://localhost:8080/accounts/totalNumber
+        // 
         long count = jdbcTemplate.queryForObject(QUERY, Long.class);
         logger.info ( "testNumberOfAccountAsJson: ljz_cust_data has " + count + " rows." );
         
