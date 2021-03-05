@@ -66,15 +66,10 @@ public class GetRowCount
 
     @GetMapping(value = "/accounts/totalNumber/asStructuredText" ,produces={MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE})
     public ResponseWrapper getNumberOfAccountAsStructuredText() {
-        try {
         long count = jdbcTemplate.queryForObject(QUERY, Long.class);
         logger.info ( "testNumberOfAccountAsJson: ljz_cust_data has " + count + " rows." );
         
         return new ResponseWrapper(count, new Date().getTime ());
-        }catch (Exception ex) {
-            logger.info ( "testNumberOfAccountAsJson: Caught exception " + ex);
-            throw ex;
-        }
     }
 }
 
