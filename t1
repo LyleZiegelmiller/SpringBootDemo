@@ -53,7 +53,7 @@ public class GetRowCount
     public ResponseEntity < ResponseWrapper > getNumberOfAccountAsXml() throws Exception {
         
         // Can invoke with curl. For example:
-        // curl  -i -u user:7ef6ce65-e9a9-4f26-b82d-151f51a5f9cf -H 'Accept: application/xml' http://localhost:8080/accounts/totalNumber/xml
+        // curl  -i -u user:f971c660-63ce-4a75-a8b1-b24feb71fb6b  http://localhost:8080/accounts/totalNumber/json
         
         long count = jdbcTemplate.queryForObject(QUERY, Long.class);
         logger.info ( "getNumberOfAccountAsXml: ljz_cust_data has " + count + " rows." );
