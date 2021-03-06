@@ -76,45 +76,13 @@ public class DatabaseController
 
 @ResponseBody
 class ResponseWrapper{
-    // Fields have to be public for the Json converter to work.
+    // Fields have to be public for the converters to work.
     public long count;
     public long currentTime;
     
     public ResponseWrapper (long count, long currentTime)
     {
         this.count = count;
-        this.currentTime = currentTime;
-    }
-
-    /**
-     * @return the count
-     */
-    public long getCount ()
-    {
-        return count;
-    }
-
-    /**
-     * @param count the count to set
-     */
-    public void setCount ( long count )
-    {
-        this.count = count;
-    }
-
-    /**
-     * @return the currentTime
-     */
-    public long getCurrentTime ()
-    {
-        return currentTime;
-    }
-
-    /**
-     * @param currentTime the currentTime to set
-     */
-    public void setCurrentTime ( long currentTime )
-    {
         this.currentTime = currentTime;
     }
 }
