@@ -27,7 +27,6 @@ public class GetRowCount
         logger = LoggerFactory.getLogger(getClass());
     }
 
-    @GetMapping("/accounts/totalNumber")
     public long testNumberOfAccount() throws Exception {
         long count = jdbcTemplate.queryForObject(QUERY, Long.class);
         logger.info ( "ljz_cust_data has " + count + " rows." );
@@ -71,7 +70,7 @@ public class GetRowCount
         // curl  -i -u user:1e8e3b30-2193-422a-85bc-bc5597a6d560 -H 'Accept: application/json' http://localhost:8080/accounts/totalNumber
         // 
         long count = jdbcTemplate.queryForObject(QUERY, Long.class);
-        logger.info ( "testNumberOfAccountAsJson: ljz_cust_data has " + count + " rows." );
+        logger.info ( "getNumberOfAccount: ljz_cust_data has " + count + " rows." );
         
         return new ResponseWrapper(count, new Date().getTime ());
     }
