@@ -14,7 +14,7 @@ public class DatabaseApplication
     private final Logger logger = LoggerFactory.getLogger(DatabaseApplication.class);
     
     @Autowired
-    GetRowCount getRowCount;
+    DatabaseController getRowCount;
     
     public static void main ( String [] args )
     {
@@ -26,11 +26,12 @@ public class DatabaseApplication
     public final class QueryDatabaseCountRunner implements CommandLineRunner {
         
         @Autowired
-        private GetRowCount getRowCount;
+        private DatabaseController getRowCount;
 
         @Override
         public void run(String... args) throws Exception {
-            getRowCount.testNumberOfAccount();
+            long i = getRowCount.testNumberOfAccount();
+            logger.info ( "count from QueryDatabaseCountRunner = " + i );
         }
     }
 }
