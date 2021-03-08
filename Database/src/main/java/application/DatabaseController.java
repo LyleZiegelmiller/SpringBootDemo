@@ -52,8 +52,8 @@ public class DatabaseController
         else if ( type.equalsIgnoreCase ( "XML" ) )
             desiredType = MediaType.APPLICATION_XML;
         else
-            throw new IllegalArgumentException("Wrong type given");
-
+            return ResponseEntity.badRequest ().body(null);
+        
         return ResponseEntity.ok ().contentType ( desiredType ).body (
                                                 new ResponseWrapper ( count, new Date ().getTime () ) );
     }
