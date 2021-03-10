@@ -5,7 +5,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Import;
 
 @SpringBootApplication
-@Import (JavaBasedAnnotationApplicationConfiguration.class)
+@Import (JavaBasedAnnotationApplicationConfiguration.class) // It's proper to have @Import here. See /32-jdbc-autoconfig-solution/src/main/java/rewards/RewardsApplication.java for reference.
 public class JavaBasedAnnotationApplication {
 
 	public static void main(String[] args) {
