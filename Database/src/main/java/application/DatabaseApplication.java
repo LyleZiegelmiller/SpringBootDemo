@@ -2,6 +2,7 @@ package application;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -28,11 +29,21 @@ public class DatabaseApplication
     
     public static void main ( String [] args )
     {
-        // TODO Auto-generated method stub
         ConfigurableApplicationContext applicationContext = SpringApplication.run ( DatabaseApplication.class, args );
         
-        SomeOtherClass someOtherClass = applicationContext.getBean(SomeOtherClass.class);
-        someOtherClass.printDescription();
+        SomeOtherClass someOtherClass;
+
+        for ( int i = 0; i < 5; i++){
+            someOtherClass = applicationContext.getBean("someOtherClass", SomeOtherClass.class);
+            someOtherClass.printDescription();
+        }
+
+        for ( int i = 0; i < 5; i++){
+            someOtherClass = applicationContext.getBean("prototypeClass", SomeOtherClass.class);
+            someOtherClass.printDescription();
+        }
+        
+
     }
     
     @Component
@@ -43,6 +54,13 @@ public class DatabaseApplication
 
         @Override
         public void run(String... args) throws Exception {
+            
+            logger.debug("This is a debug message");
+            logger.info("This is an info message");
+            logger.warn("This is a warn message");
+            logger.error("This is an error message");
+            //logger.fatal("This is a fatal message");
+            
             long i = getRowCount.testNumberOfAccount();
             logger.info ( "count from QueryDatabaseCountRunner = " + i );
 
