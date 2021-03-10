@@ -6,9 +6,9 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 @ComponentScan("com.example.demo")
-public class ApplicationConfiguration
+public class AnnotationBasedApplicationConfiguration
 {
-    ApplicationConfiguration (@Autowired SomeClass obj){
+    AnnotationBasedApplicationConfiguration (@Autowired SomeClass obj){
     
         obj.setBeanProperty ();
         obj.printProperty ();

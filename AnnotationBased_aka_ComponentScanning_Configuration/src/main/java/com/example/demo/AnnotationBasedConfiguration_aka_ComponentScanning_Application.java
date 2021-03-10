@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Import;
 
 @SpringBootApplication
-@Import (ApplicationConfiguration.class)
+//@Import (AnnotationBasedApplicationConfiguration.class)
 public class AnnotationBasedConfiguration_aka_ComponentScanning_Application {
 
 	public static void main(String[] args) {
