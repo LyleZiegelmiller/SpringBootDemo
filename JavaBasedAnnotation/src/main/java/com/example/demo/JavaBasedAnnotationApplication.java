@@ -5,7 +5,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Import;
 
 @SpringBootApplication
-//@Import (ApplicationConfiguration.class)
+@Import (JavaBasedAnnotationApplicationConfiguration.class)
 public class JavaBasedAnnotationApplication {
 
 	public static void main(String[] args) {
@@ -13,9 +13,9 @@ public class JavaBasedAnnotationApplication {
 		//ApplicationContext context = SpringApplication.run(JavaBasedAnnotationApplicationConfiguration.class, args);
 		ApplicationContext context = SpringApplication.run(JavaBasedAnnotationApplication.class, args);
 		
-//		Integer i = context.getBean ( "someInteger", Integer.class );
-//		
-//		System.out.println("i = " + i);
+		Integer i = context.getBean ( "someInteger", Integer.class );
+		
+		System.out.println("i = " + i);
 	}
 
 }
