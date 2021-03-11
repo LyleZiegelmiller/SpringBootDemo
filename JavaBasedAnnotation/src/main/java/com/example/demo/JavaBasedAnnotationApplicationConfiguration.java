@@ -5,8 +5,8 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 
 @Configuration
-//@Import( {MyInteger.class, MyOtherInteger.class} )
-@Import( MyInteger.class )
+@Import( {MyInteger.class, MyOtherInteger.class} )
+//@Import( MyInteger.class )
 public class JavaBasedAnnotationApplicationConfiguration
 {
     @Bean public Integer someInteger(MyInteger i) {
