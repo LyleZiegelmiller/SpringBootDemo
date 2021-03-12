@@ -40,7 +40,8 @@ public class JavaBasedAnnotationApplication {
     @Bean
     ApplicationRunner applicationRunner(Environment environment) {
         return args -> {
-            logger.info("JAVA_HOME = " + this.environment.getProperty("JAVA_HOME"));
+            logger.info("ACME_TIMEOUT = " + this.environment.getProperty("ACME_TIMEOUT"));
+            logger.info("PYTHON_HOME = " + this.environment.getProperty("PYTHON_HOME"));
         };
     }
 }
