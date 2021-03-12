@@ -8,14 +8,24 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@EnableConfigurationProperties(AcmeInfo.class)
+@EnableConfigurationProperties (AcmeInfo.class)
 public class AcmeRestController
 {
-    private final Logger logger = LoggerFactory.getLogger(AcmeRestController.class);
-    
+    private final Logger logger = LoggerFactory.getLogger ( AcmeRestController.class );
+
     @Autowired
-    private AcmeInfo info;
+    private AcmeInfo info; // This can't be an argument to getAcmeInfo.
+
+    /**
+     * @formatter:off
+
+    $ curl -H 'Accept:application/json' http://localhost:8080/acme
+    {"host":"192.168.1.42","port":8080,"logdir":"/logs","timeout":2000}
+    $ curl -H 'Accept:application/xml' http://localhost:8080/acme
+    <AcmeInfo><host>192.168.1.42</host><port>8080</port><logdir>/logs</logdir><timeout>2000</timeout></AcmeInfo>
     
+     */
+
     @GetMapping("/acme")
     public AcmeInfo getAcmeInfo() {
         
@@ -23,5 +33,4 @@ public class AcmeRestController
         
         return info;
     }
-    
 }
