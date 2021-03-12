@@ -5,7 +5,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 
 @Configuration
-@Import( {MyInteger.class, DerivedFrom_OtherInteger.class} )
+@Import( {MyInteger.class, DerivedFrom_MyInteger.class} )
 public class JavaBasedAnnotationApplicationConfiguration
 {
     // See https://www.logicbig.com/tutorials/spring-framework/spring-core/javaconfig-methods-inter-dependency.html
