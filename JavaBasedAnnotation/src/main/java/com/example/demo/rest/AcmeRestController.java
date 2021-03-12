@@ -13,8 +13,11 @@ public class AcmeRestController
 {
     private final Logger logger = LoggerFactory.getLogger(AcmeRestController.class);
     
+    @Autowired
+    private AcmeInfo info;
+    
     @GetMapping("/acme")
-    public AcmeInfo getAcmeInfo(@Autowired AcmeInfo info) {
+    public AcmeInfo getAcmeInfo() {
         
         logger.info ( "Inside getAcmeInfo, info = " + info );
         
