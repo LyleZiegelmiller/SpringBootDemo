@@ -3,7 +3,9 @@ package com.example.demo.rest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
+import org.springframework.core.env.Environment;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -15,6 +17,11 @@ public class AcmeRestController
 
     @Autowired
     private AcmeInfo info; // This can't be an argument to getAcmeInfo.
+    
+    @Autowired
+    private Environment env;
+    
+    private @Value("${JAVA_HOME}") String java_home;
 
     /**
      * @formatter:off
@@ -33,5 +40,22 @@ public class AcmeRestController
         
         // Automatically converts to either JSON or XML.
         return info;
+    }
+    
+    @GetMapping("/timeout")
+    public Integer getTimeout() {
+        
+        String timeoutStr = env.getProperty ( "JAVA_HOME" ); //"ACME_CLIENT_TIMEOUT" );
+        
+        timeoutStr = java_home;
+        
+        logger.info ( "timeoutStr = " + timeoutStr );
+        
+        if ( timeoutStr == null)
+            return null;
+        
+        Integer timeout = Integer.valueOf ( timeoutStr );
+        
+        return timeout;
     }
 }

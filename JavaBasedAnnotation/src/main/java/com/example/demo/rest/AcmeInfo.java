@@ -1,8 +1,9 @@
 package com.example.demo.rest;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.context.annotation.Configuration;
 
-//@Component
+//@Configuration
 @ConfigurationProperties(prefix="acme.client")
 public class AcmeInfo
 {
