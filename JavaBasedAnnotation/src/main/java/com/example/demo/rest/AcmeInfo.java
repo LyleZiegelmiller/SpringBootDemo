@@ -6,10 +6,12 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 @ConfigurationProperties(prefix="acme.client")
 public class AcmeInfo
 {
-    public String host;
-    public int port;
-    public String logdir;
-    public int timeout;
+    private String host;
+    private int port;
+    private String logdir;
+    private int timeout;
+    
+    // Have to have the setters and getters.
     /**
      * @return the host
      */

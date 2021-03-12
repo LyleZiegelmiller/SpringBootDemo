@@ -31,6 +31,7 @@ public class AcmeRestController
         
         logger.info ( "Inside getAcmeInfo, info = " + info );
         
+        // Automatically converts to either JSON or XML.
         return info;
     }
 }
