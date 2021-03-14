@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@EnableConfigurationProperties (AcmeInfo.class)
+@EnableConfigurationProperties ( {AcmeInfo.class, EnvInfo.class} )
 public class AcmeRestController
 {
     private final Logger logger = LoggerFactory.getLogger ( AcmeRestController.class );
@@ -20,6 +20,9 @@ public class AcmeRestController
     
     @Autowired
     private Environment env;
+    
+    @Autowired
+    private EnvInfo envInfo;
     
     private @Value("${JAVA_HOME}") String java_home;
 
@@ -42,12 +45,17 @@ public class AcmeRestController
         return info;
     }
     
+    @GetMapping("/root")
+    public String getRoot() {
+        logger.info ( "root = " +  envInfo.getRoot ());
+        
+        return envInfo.getRoot ();
+    }
+    
     @GetMapping("/timeout")
     public Integer getTimeout() {
         
-        String timeoutStr = env.getProperty ( "JAVA_HOME" ); //"ACME_CLIENT_TIMEOUT" );
-        
-        timeoutStr = java_home;
+        String timeoutStr = env.getProperty ( "ACME_TIMEOUT" ); //"ACME_CLIENT_TIMEOUT" );
         
         logger.info ( "timeoutStr = " + timeoutStr );
         
