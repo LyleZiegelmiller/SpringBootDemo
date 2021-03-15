@@ -100,5 +100,6 @@
 		<module>JavaBasedAnnotation</module>
 		<module>Actuators</module>
 		<module>Database</module>
+		<module>Scope</module>
 	</modules>
 </project>

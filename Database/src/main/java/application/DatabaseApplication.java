@@ -29,7 +29,7 @@ public class DatabaseApplication
     
     public static void main ( String [] args )
     {
-        ConfigurableApplicationContext applicationContext = SpringApplication.run ( DatabaseApplication.class, args );
+        ApplicationContext applicationContext = SpringApplication.run ( DatabaseApplication.class, args );
         
         SomeOtherClass someOtherClass;
 
