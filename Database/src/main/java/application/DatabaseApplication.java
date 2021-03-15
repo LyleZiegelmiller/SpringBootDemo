@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ApplicationContext;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.stereotype.Component;
 
@@ -31,19 +32,17 @@ public class DatabaseApplication
     {
         ApplicationContext applicationContext = SpringApplication.run ( DatabaseApplication.class, args );
         
-        SomeOtherClass someOtherClass;
-
-        for ( int i = 0; i < 5; i++){
-            someOtherClass = applicationContext.getBean("someOtherClass", SomeOtherClass.class);
-            someOtherClass.printDescription();
-        }
-
-        for ( int i = 0; i < 5; i++){
-            someOtherClass = applicationContext.getBean("prototypeClass", SomeOtherClass.class);
-            someOtherClass.printDescription();
-        }
-        
-
+//        SomeOtherClass someOtherClass;
+//
+//        for ( int i = 0; i < 5; i++){
+//            someOtherClass = applicationContext.getBean("someOtherClass", SomeOtherClass.class);
+//            someOtherClass.printDescription();
+//        }
+//
+//        for ( int i = 0; i < 5; i++){
+//            someOtherClass = applicationContext.getBean("prototypeClass", SomeOtherClass.class);
+//            someOtherClass.printDescription();
+//        }
     }
     
     @Component
