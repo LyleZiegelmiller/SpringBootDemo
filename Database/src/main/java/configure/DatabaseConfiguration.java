@@ -12,7 +12,7 @@ public class DatabaseConfiguration
     @Bean//(name = "ljzDataSource")
     public DataSource dataSource() {
         return (new EmbeddedDatabaseBuilder()) //
-                .addScript("classpath:schema.sql") //
-                .addScript("classpath:data.sql").build();
+                .addScript("classpath:ljz_schema.sql") //
+                .addScript("classpath:ljz_data.sql").build();
     }
 }
