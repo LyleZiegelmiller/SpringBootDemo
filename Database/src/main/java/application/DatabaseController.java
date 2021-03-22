@@ -1,17 +1,24 @@
 package application;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
+
+import application.jpa.LJZ_Cust_Data_Entity;
+import application.jpa.LJZ_Cust_Data_Repository;
 
 @RestController
 public class DatabaseController
@@ -20,6 +27,7 @@ public class DatabaseController
 
     public static final String QUERY = "SELECT count(*) FROM ljz_cust_data";
     private JdbcTemplate jdbcTemplate;
+    private LJZ_Cust_Data_Repository repo;
 
     /* Because this is the only constructor, the use of @Autowired is unnecessary. */
     DatabaseController (JdbcTemplate jdbcTemplate)
@@ -87,6 +95,30 @@ public class DatabaseController
 
         return ResponseEntity.ok ().contentType ( MediaType.APPLICATION_XML ).body (
                                                 new ResponseWrapper ( count, new Date ().getTime () ) );
+    }
+    
+    @PutMapping(value = "/accounts/{name}/{newName}")
+    @ResponseStatus(HttpStatus.NO_CONTENT) // 204
+    public void updateName (@PathVariable("name") String oldName,
+                            @PathVariable("newName") String newName)
+    {
+        LJZ_Cust_Data_Entity ljz_Cust_Data_Entity = repo.findByName ( oldName );
+        
+        ljz_Cust_Data_Entity.name = "John Robbins";
+        
+        repo.save ( ljz_Cust_Data_Entity );
+        
+    }
+    
+    @GetMapping (value = "/accounts/getAll")
+    public List<LJZ_Cust_Data_Entity> getAllAccounts(){
+        
+        List<LJZ_Cust_Data_Entity> retVal = new ArrayList<>();
+        
+        for ( LJZ_Cust_Data_Entity entity: repo.findAll ())
+            retVal.add ( entity );
+        
+        return retVal;
     }
 
     @GetMapping (value = "/accounts/totalNumber", produces = { MediaType.APPLICATION_XML_VALUE,

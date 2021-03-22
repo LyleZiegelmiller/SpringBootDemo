@@ -13,6 +13,7 @@ import org.springframework.stereotype.Component;
 
 import misc.SomeOtherClass;
 
+
 /*
  * The exclude below suppresses Spring Boot Security
  */
@@ -32,17 +33,17 @@ public class DatabaseApplication
     {
         ApplicationContext applicationContext = SpringApplication.run ( DatabaseApplication.class, args );
         
-//        SomeOtherClass someOtherClass;
-//
-//        for ( int i = 0; i < 5; i++){
-//            someOtherClass = applicationContext.getBean("someOtherClass", SomeOtherClass.class);
-//            someOtherClass.printDescription();
-//        }
-//
-//        for ( int i = 0; i < 5; i++){
-//            someOtherClass = applicationContext.getBean("prototypeClass", SomeOtherClass.class);
-//            someOtherClass.printDescription();
-//        }
+        SomeOtherClass someOtherClass;
+
+        for ( int i = 0; i < 5; i++){
+            someOtherClass = applicationContext.getBean("someOtherClass", SomeOtherClass.class);
+            someOtherClass.printDescription();
+        }
+
+        for ( int i = 0; i < 5; i++){
+            someOtherClass = applicationContext.getBean("prototypeClass", SomeOtherClass.class);
+            someOtherClass.printDescription();
+        }
     }
     
     @Component
