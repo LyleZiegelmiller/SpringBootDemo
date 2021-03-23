@@ -6,6 +6,7 @@ import java.util.List;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -27,6 +28,7 @@ public class DatabaseController
 
     public static final String QUERY = "SELECT count(*) FROM ljz_cust_data";
     private JdbcTemplate jdbcTemplate;
+    @Autowired
     private LJZ_Cust_Data_Repository repo;
 
     /* Because this is the only constructor, the use of @Autowired is unnecessary. */
@@ -97,14 +99,16 @@ public class DatabaseController
                                                 new ResponseWrapper ( count, new Date ().getTime () ) );
     }
     
-    @PutMapping(value = "/accounts/{name}/{newName}")
+    @PutMapping(value = "/accounts/{oldName}/{newName}")
     @ResponseStatus(HttpStatus.NO_CONTENT) // 204
-    public void updateName (@PathVariable("name") String oldName,
+    public void updateName (@PathVariable("oldName") String oldName,
                             @PathVariable("newName") String newName)
     {
-        LJZ_Cust_Data_Entity ljz_Cust_Data_Entity = repo.findByName ( oldName );
+        // Invoke with curl -X PUT -H "Content-type: application/json" "http://localhost:8080/accounts/Richard%20Green/John%20Robbins"
         
-        ljz_Cust_Data_Entity.name = "John Robbins";
+        LJZ_Cust_Data_Entity ljz_Cust_Data_Entity = repo.findFirstByName ( oldName );
+        
+        ljz_Cust_Data_Entity.name = newName;
         
         repo.save ( ljz_Cust_Data_Entity );
         
