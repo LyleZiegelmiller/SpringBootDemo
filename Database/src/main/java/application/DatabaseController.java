@@ -28,13 +28,13 @@ public class DatabaseController
 
     public static final String QUERY = "SELECT count(*) FROM ljz_cust_data";
     private JdbcTemplate jdbcTemplate;
-    @Autowired
     private LJZ_Cust_Data_Repository repo;
 
     /* Because this is the only constructor, the use of @Autowired is unnecessary. */
-    DatabaseController (JdbcTemplate jdbcTemplate)
+    DatabaseController (JdbcTemplate jdbcTemplate, LJZ_Cust_Data_Repository repo)
     {
         this.jdbcTemplate = jdbcTemplate;
+        this.repo = repo;
         logger = LoggerFactory.getLogger ( getClass () );
     }
 
@@ -106,7 +106,12 @@ public class DatabaseController
     {
         // Invoke with curl -X PUT -H "Content-type: application/json" "http://localhost:8080/accounts/Richard%20Green/John%20Robbins"
         
-        LJZ_Cust_Data_Entity ljz_Cust_Data_Entity = repo.findFirstByName ( oldName );
+        LJZ_Cust_Data_Entity ljz_Cust_Data_Entity;
+        
+        @SuppressWarnings ("unused")
+        Long count = repo.count ();
+        ljz_Cust_Data_Entity = repo.findById ( 2L ).get ();
+        ljz_Cust_Data_Entity = repo.findFirstByName ( oldName );
         
         ljz_Cust_Data_Entity.name = newName;
         

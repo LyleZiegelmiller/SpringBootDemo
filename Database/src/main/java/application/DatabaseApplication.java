@@ -9,6 +9,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.stereotype.Component;
 
 import misc.SomeOtherClass;
@@ -17,10 +18,11 @@ import misc.SomeOtherClass;
 /*
  * The exclude below suppresses Spring Boot Security
  */
-@SpringBootApplication(scanBasePackages = {"configure", "application", "misc"}, exclude = {
+@SpringBootApplication(scanBasePackages = {"configure", "application", "misc", "application.jpa"}, exclude = {
         org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration.class,
         org.springframework.boot.actuate.autoconfigure.security.servlet.ManagementWebSecurityAutoConfiguration.class}
         )
+@EnableJpaRepositories//("jpa")
 public class DatabaseApplication
 {
     private final Logger logger = LoggerFactory.getLogger(DatabaseApplication.class);
