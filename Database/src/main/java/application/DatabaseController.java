@@ -28,13 +28,13 @@ public class DatabaseController
 
     public static final String QUERY = "SELECT count(*) FROM ljz_cust_data";
     private JdbcTemplate jdbcTemplate;
+    @Autowired
     private LJZ_Cust_Data_Repository repo;
 
     /* Because this is the only constructor, the use of @Autowired is unnecessary. */
-    DatabaseController (JdbcTemplate jdbcTemplate, LJZ_Cust_Data_Repository repo)
+    DatabaseController (JdbcTemplate jdbcTemplate)
     {
         this.jdbcTemplate = jdbcTemplate;
-        this.repo = repo;
         logger = LoggerFactory.getLogger ( getClass () );
     }
 
