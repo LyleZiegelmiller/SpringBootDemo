@@ -31,17 +31,17 @@ public class DatabaseApplication
     {
         ApplicationContext applicationContext = SpringApplication.run ( DatabaseApplication.class, args );
         
-        SomeOtherClass someOtherClass;
-
-        for ( int i = 0; i < 5; i++){
-            someOtherClass = applicationContext.getBean("someOtherClass", SomeOtherClass.class);
-            someOtherClass.printDescription();
-        }
-
-        for ( int i = 0; i < 5; i++){
-            someOtherClass = applicationContext.getBean("prototypeClass", SomeOtherClass.class);
-            someOtherClass.printDescription();
-        }
+//        SomeOtherClass someOtherClass;
+//
+//        for ( int i = 0; i < 5; i++){
+//            someOtherClass = applicationContext.getBean("someOtherClass", SomeOtherClass.class);
+//            someOtherClass.printDescription();
+//        }
+//
+//        for ( int i = 0; i < 5; i++){
+//            someOtherClass = applicationContext.getBean("prototypeClass", SomeOtherClass.class);
+//            someOtherClass.printDescription();
+//        }
     }
     
     @Component
@@ -57,7 +57,6 @@ public class DatabaseApplication
             logger.info("This is an info message");
             logger.warn("This is a warn message");
             logger.error("This is an error message");
-            //logger.fatal("This is a fatal message");
             
             long i = getRowCount.testNumberOfAccount();
             logger.info ( "count from QueryDatabaseCountRunner = " + i );

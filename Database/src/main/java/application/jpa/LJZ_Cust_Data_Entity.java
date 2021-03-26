@@ -8,7 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "ljz_cust_data")
+@Table(name = "ljz_cust_data2") // If I change this to ljz_cust_data, jdbcTemplate reports 0 rows in database.
 public class LJZ_Cust_Data_Entity
 {
     @Id
