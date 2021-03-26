@@ -101,5 +101,6 @@
 		<module>Actuators</module>
 		<module>Database</module>
 		<module>Scope</module>
+		<module>tomcat-embed-jasper</module>
 	</modules>
 </project>
