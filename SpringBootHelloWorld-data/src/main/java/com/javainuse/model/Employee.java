@@ -5,6 +5,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 @Entity
 public class Employee {
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -13,6 +16,12 @@ public class Employee {
 
 	private String name;
 
+    private Logger logger;
+
+	public Employee() {
+	    logger = LoggerFactory.getLogger(getClass());
+	    logger.info ( "Inside Employee class constructor." );
+	}
 	public String getName() {
 		return name;
 	}
