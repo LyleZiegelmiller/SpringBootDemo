@@ -99,28 +99,28 @@ public class DatabaseController
                                                 new ResponseWrapper ( count, new Date ().getTime () ) );
     }
     
-    @PutMapping(value = "/accounts/{oldName}/{newName}")
+    @PutMapping(value = "/accounts/changeName/{oldName}/{newName}")
     @ResponseStatus(HttpStatus.NO_CONTENT) // 204
     public void updateName (@PathVariable("oldName") String oldName,
                             @PathVariable("newName") String newName)
     {
-        // Invoke with curl -X PUT -H "Content-type: application/json" "http://localhost:8080/accounts/Richard%20Green/John%20Robbins"
+        // Invoke with curl -X PUT -H "Content-type: application/json" "http://localhost:8080/accounts/changeName/Richard%20Green/John%20Robbins"
         
         LJZ_Cust_Data_Entity ljz_Cust_Data_Entity;
         
-        @SuppressWarnings ("unused")
-        Long count = repo.count ();
-        ljz_Cust_Data_Entity = repo.findById ( 2L ).get ();
         ljz_Cust_Data_Entity = repo.findFirstByName ( oldName );
         
         ljz_Cust_Data_Entity.name = newName;
         
         repo.save ( ljz_Cust_Data_Entity );
-        
     }
     
     @GetMapping (value = "/accounts/getAll")
     public List<LJZ_Cust_Data_Entity> getAllAccounts(){
+        
+        // Invoke with
+        // curl -H "Accept: application/json" "http://localhost:8080/accounts/getAll"
+        // curl -H "Accept: application/xml" "http://localhost:8080/accounts/getAll"
         
         List<LJZ_Cust_Data_Entity> retVal = new ArrayList<>();
         
