@@ -23,8 +23,8 @@ public class DatabaseApplication
 {
     private final Logger logger = LoggerFactory.getLogger(DatabaseApplication.class);
     
-    @Autowired
-    DatabaseController getRowCount;
+//    @Autowired
+//    DatabaseController getRowCount;
 
     
     public static void main ( String [] args )
@@ -44,23 +44,23 @@ public class DatabaseApplication
 //        }
     }
     
-    @Component
-    public final class QueryDatabaseCountRunner implements CommandLineRunner {
-        
-        @Autowired
-        private DatabaseController getRowCount;
-
-        @Override
-        public void run(String... args) throws Exception {
-            
-            logger.debug("This is a debug message");
-            logger.info("This is an info message");
-            logger.warn("This is a warn message");
-            logger.error("This is an error message");
-            
-            long i = getRowCount.testNumberOfAccount();
-            logger.info ( "count from QueryDatabaseCountRunner = " + i );
-
-        }
-    }
+//    @Component
+//    public final class QueryDatabaseCountRunner implements CommandLineRunner {
+//        
+//        @Autowired
+//        private DatabaseController getRowCount;
+//
+//        @Override
+//        public void run(String... args) throws Exception {
+//            
+//            logger.debug("This is a debug message");
+//            logger.info("This is an info message");
+//            logger.warn("This is a warn message");
+//            logger.error("This is an error message");
+//            
+//            long i = getRowCount.testNumberOfAccount();
+//            logger.info ( "count from QueryDatabaseCountRunner = " + i );
+//
+//        }
+//    }
 }

@@ -7,6 +7,7 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -22,19 +23,21 @@ import application.jpa.LJZ_Cust_Data_Entity;
 import application.jpa.LJZ_Cust_Data_Repository;
 
 @RestController
+@EntityScan("application.jpa")
 public class DatabaseController
 {
     protected final Logger logger;
 
     public static final String QUERY = "SELECT count(*) FROM ljz_cust_data";
+    @Autowired
     private JdbcTemplate jdbcTemplate;
     @Autowired
     private LJZ_Cust_Data_Repository repo;
 
     /* Because this is the only constructor, the use of @Autowired is unnecessary. */
-    DatabaseController (JdbcTemplate jdbcTemplate)
+    DatabaseController ()
     {
-        this.jdbcTemplate = jdbcTemplate;
+        //this.jdbcTemplate = jdbcTemplate;
         logger = LoggerFactory.getLogger ( getClass () );
     }
 
@@ -105,6 +108,9 @@ public class DatabaseController
                             @PathVariable("newName") String newName)
     {
         // Invoke with curl -X PUT -H "Content-type: application/json" "http://localhost:8080/accounts/changeName/Richard%20Green/John%20Robbins"
+        
+        long count = jdbcTemplate.queryForObject ( QUERY, Long.class );
+        logger.info ( "updateName: ljz_cust_data has " + count + " rows." );
         
         LJZ_Cust_Data_Entity ljz_Cust_Data_Entity;
         
