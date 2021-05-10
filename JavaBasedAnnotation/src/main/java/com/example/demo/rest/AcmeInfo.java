@@ -1,12 +1,7 @@
 package com.example.demo.rest;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Primary;
-import org.springframework.stereotype.Component;
 
-@Component
-@Primary
 @ConfigurationProperties(prefix="acme.client-connection")
 public class AcmeInfo
 {
