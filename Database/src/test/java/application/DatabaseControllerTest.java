@@ -39,7 +39,7 @@ class DatabaseControllerTest
     @Test
     void testUpdateName()
     {
-        
+     // TODO - Fix this test.
         long count = jdbcTemplate.queryForObject("select count(*) from ljz_cust_data", Long.class);
         assertEquals ( 2L, count );
         

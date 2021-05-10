@@ -8,4 +8,13 @@
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 	<artifactId>Actuators</artifactId>
+	<!--  Note: needs spring-boot-starter-actuator, which this application inherits
+	            from its parent.
+	
+	    <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+	
+	 -->
 </project>

@@ -1,8 +1,16 @@
 package com.example.demo;
 
 
-import org.slf4j.Logger;
+//import java.util.logging.Level;
+
+//import org.slf4j.Logger;
+//import org.slf4j.LoggerFactory;
+//import org.slf4j.event.Level;
+
+import ch.qos.logback.classic.Level;
+import ch.qos.logback.classic.Logger;
 import org.slf4j.LoggerFactory;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;
@@ -21,12 +29,15 @@ import com.example.demo.rest.AcmeInfo;
         )
 public class JavaBasedAnnotationApplication {
     
-	private static Logger logger = LoggerFactory.getLogger(JavaBasedAnnotationApplication.class);
+	private static Logger logger = (Logger)LoggerFactory.getLogger(JavaBasedAnnotationApplication.class);
 	
     @Autowired
     private Environment environment;
 
     public static void main(String[] args) {
+        logger.setLevel(Level.DEBUG);
+
+        
 		ApplicationContext context = SpringApplication.run(JavaBasedAnnotationApplication.class, args);
 		Integer i = context.getBean ( "someInteger", Integer.class );
 		System.out.println("i = " + i);
