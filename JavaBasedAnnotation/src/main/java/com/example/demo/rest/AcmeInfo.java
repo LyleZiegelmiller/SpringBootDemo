@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 @Primary
-@ConfigurationProperties(prefix="acme.client")
+@ConfigurationProperties(prefix="acme.client-connection")
 public class AcmeInfo
 {
     private String host;
